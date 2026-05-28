@@ -10,7 +10,6 @@ JOIN race t3 ON t1.race_id = t3.id
 JOIN circuit t4 ON t3.circuit_id = t4.id
 WHERE t1.type = 'RACE_RESULT' 
   AND t1.position_number = 1
-  -- O segredo está aqui: comparar o país do piloto com o país do circuito
   AND t2.country_of_birth_country_id = t4.country_id
 GROUP BY t2.full_name, t4.country_id
 ORDER BY vitorias_em_casa DESC
